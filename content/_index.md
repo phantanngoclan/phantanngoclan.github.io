@@ -39,16 +39,11 @@ sections:
   # ===== ABOUT =====
   - block: markdown
     content:
-      title: "Mission"
-      text: '**OMNI Lab** focuses on organic semiconductors and mixed ionic–electronic
-        conductors (OMIECs), spanning:
-
-        - Molecular & side-chain design  
-        - Multiscale simulations (DFT → MD)  
-        - Thin films, morphology, and devices  
-        - OECTs, photovoltaics, and energy materials'
-    design:
-      css_class: "home-wide"
+      title: ""
+      text: |
+        **We design and study organic electronic & functional soft materials** spanning OMIECs, conjugated polymers, mixed ionic–electronic transport, and molecular engineering.
+    
+        Our lab combines **molecular design**, **simulation**, and **device-oriented characterization** to understand structure–property–function relationships.
 
   # ===== FOCUS AREAS =====
   - block: features
