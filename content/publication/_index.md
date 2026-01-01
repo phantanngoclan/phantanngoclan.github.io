@@ -4,7 +4,7 @@ date: 2026-01-01
 type: landing
 
 design:
-  css_class: "nio-pubs"
+  css_class: "nio-pubs nio-pubs-manual"
   spacing:
     padding: [0, 0, 0, 0]
 
@@ -22,40 +22,62 @@ sections:
       spacing:
         padding: [60, 0, 40, 0]
 
-  - block: collection
-    id: pubs
-    content:
-      # Render from content/publication/
-      collection: publications
-      count: 1000
-      sort_by: date
-      sort_ascending: false
-
-      # Built-in UI controls (safe across recent Hugo Blox versions)
-      filter_show_count: true
-      filter_show_search: true
-      filter_show_sort: true
-      filter_show_year: true
-      filter_show_type: true
-
-      # NOTE: Do NOT add `filters:` here unless you match the exact schema
-      # expected by your theme version. A wrong schema causes build failure.
-
-    design:
-      view: citation
-      columns: "1"
-      spacing:
-        padding: [10, 0, 70, 0]
-
+  # === MANUAL PUBLICATIONS LIST (NIOLab style) ===
   - block: markdown
     content:
       text: |
-        <div class="pubs-note">
-        **Tip:** Add publications by creating files under `content/publication/` (one per paper)  
-        or import from BibTeX and let this page render automatically.
-        </div>
+        ## At UniversityX
+
+        <ol class="pub-card-list">
+
+          <li class="pub-card">
+            <span class="pub-num">1.</span>
+            <div class="pub-text">
+              Nguyen Viet Anh, Wu Ye, Do Thi Thu Ha, Nguyen Linh Thi Dieu, Sergeev Aleksandr A., Zhu Ding, Valuckas Vytautas, Pham Duong, Bui Hai Xuan Son, Hoang Duy Mai, Tung Bui Son, Khuyen Bui Xuan, Nguyen Thanh Binh, Nguyen Hai Son, Lam Vu Dinh, Rogach Andrey L., Ha Son Tung, Le-Van Quynh,
+              <em>"Micrometer-Resolution Fluorescence and Lifetime Mappings of CsPbBr3 Nanocrystal Films Coupled with a TiO2 Grating"</em>,
+              <span class="pub-journal">The Journal of Physical Chemistry Letters</span>, <span class="pub-year">15</span>, 11291 (2024).
+            </div>
+          </li>
+
+          <li class="pub-card">
+            <span class="pub-num">2.</span>
+            <div class="pub-text">
+              Nguyen Viet Anh, Wu Ye, Do Thi Thu Ha, Nguyen Linh Thi Dieu, Sergeev Aleksandr A., Zhu Ding, Valuckas Vytautas, Pham Duong, Bui Hai Xuan Son, Hoang Duy Mai, Tung Bui Son, Khuyen Bui Xuan, Nguyen Thanh Binh, Nguyen Hai Son, Lam Vu Dinh, Rogach Andrey L., Ha Son Tung, Le-Van Quynh,
+              <em>"Angle-Resolved Photoluminescence Engineering in CsPbBr3 Nanocrystal Thin Films Using Dielectric Gratings"</em>,
+              <span class="pub-journal">ACS Photonics</span>, <span class="pub-year">11</span>, 2041 (2024).
+            </div>
+          </li>
+
+          <li class="pub-card">
+            <span class="pub-num">3.</span>
+            <div class="pub-text">
+              Nguyen Viet Anh, Wu Ye, Do Thi Thu Ha, Nguyen Linh Thi Dieu, Sergeev Aleksandr A., Zhu Ding, Valuckas Vytautas, Pham Duong, Bui Hai Xuan Son, Hoang Duy Mai, Tung Bui Son, Khuyen Bui Xuan, Nguyen Thanh Binh, Nguyen Hai Son, Lam Vu Dinh, Rogach Andrey L., Ha Son Tung, Le-Van Quynh,
+              <em>"Time-Resolved Emission Mapping of Perovskite Nanocrystal Layers Coupled to Photonic Metasurfaces"</em>,
+              <span class="pub-journal">Nano Letters</span>, <span class="pub-year">24</span>, 7732 (2024).
+            </div>
+          </li>
+
+          <li class="pub-card">
+            <span class="pub-num">4.</span>
+            <div class="pub-text">
+              Nguyen Viet Anh, Wu Ye, Do Thi Thu Ha, Nguyen Linh Thi Dieu, Sergeev Aleksandr A., Zhu Ding, Valuckas Vytautas, Pham Duong, Bui Hai Xuan Son, Hoang Duy Mai, Tung Bui Son, Khuyen Bui Xuan, Nguyen Thanh Binh, Nguyen Hai Son, Lam Vu Dinh, Rogach Andrey L., Ha Son Tung, Le-Van Quynh,
+              <em>"Microscale Lifetime Imaging of Quasi-2D Perovskites Enabled by Metasurface-Assisted Outcoupling"</em>,
+              <span class="pub-journal">Optics Letters</span>, <span class="pub-year">49</span>, 2465 (2024).
+            </div>
+          </li>
+
+          <li class="pub-card">
+            <span class="pub-num">5.</span>
+            <div class="pub-text">
+              Nguyen Viet Anh, Wu Ye, Do Thi Thu Ha, Nguyen Linh Thi Dieu, Sergeev Aleksandr A., Zhu Ding, Valuckas Vytautas, Pham Duong, Bui Hai Xuan Son, Hoang Duy Mai, Tung Bui Son, Khuyen Bui Xuan, Nguyen Thanh Binh, Nguyen Hai Son, Lam Vu Dinh, Rogach Andrey L., Ha Son Tung, Le-Van Quynh,
+              <em>"Enhanced Emission Directionality in CsPbBr3 Nanocrystal Films via TiO2 Nanostructured Interfaces"</em>,
+              <span class="pub-journal">Advanced Optical Materials</span>, <span class="pub-year">12</span>, 2301987 (2024).
+            </div>
+          </li>
+
+        </ol>
+
     design:
       spacing:
-        padding: [0, 0, 30, 0]
+        padding: [20, 0, 60, 0]
 ---
-
