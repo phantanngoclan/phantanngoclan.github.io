@@ -18,4 +18,7 @@ main:
   - name: News
     url: /news/
     weight: 50
+  - name: Gallery
+    url: /gallery/
+    weight: 60
 
