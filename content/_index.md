@@ -4,14 +4,16 @@ date: 2026-01-01
 type: landing
 
 design:
-  spacing: "5rem"
+  spacing: "4rem"
 
 sections:
-  # ===== HERO =====
- - block: hero
+  # =========================
+  # HERO (big image + title)
+  # =========================
+  - block: hero
     content:
-      title: Organics Materials for Next Innovations
-      text: 'Exploring novel materials towards advanced disciplinary applications'
+      title: 'Organics Materials for Next Innovations'
+      text: "Exploring novel materials towards advanced disciplinary applications"
       primary_action:
         text: "Research"
         url: "/research/"
