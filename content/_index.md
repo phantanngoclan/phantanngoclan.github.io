@@ -1,5 +1,6 @@
 ---
 title: "Home"
+date: 2026-01-01
 type: landing
 
 design:
@@ -7,10 +8,10 @@ design:
 
 sections:
   # ===== HERO =====
-  - block: hero
+ - block: hero
     content:
-      title: 'Organic Materials for Next Innovations'
-      text: Exploring novel materials towards connecting **molecular structure** and **device performance** of advanced disciplinary applications
+      title: 'Organics Materials for Next Innovations'
+      text: "Exploring novel materials towards advanced disciplinary applications"
       primary_action:
         text: "Research"
         url: "/research/"
