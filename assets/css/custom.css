@@ -1,90 +1,320 @@
-/* ---------------------------
-   NIOLab-style Footer
----------------------------- */
-.nio-footer{
-  margin-top: 64px;
-  border-top: 1px solid rgba(0,0,0,.08);
-  background: #fff;
+/* =========================================================
+   custom.css — Nature / Science journal vibe (Hugo Blox)
+   Put this file at: assets/css/custom.css
+   ========================================================= */
+
+/* -------------------------
+   0) Design tokens
+   ------------------------- */
+:root{
+  --nio-bg: #ffffff;
+  --nio-surface: #fbfbfc;      /* subtle off-white */
+  --nio-ink: #111827;          /* near-black */
+  --nio-ink-2: #374151;        /* muted text */
+  --nio-ink-3: #6b7280;        /* secondary text */
+  --nio-rule: #e5e7eb;         /* hairline */
+  --nio-link: #0b57d0;         /* journal-like blue */
+  --nio-link-hover: #063a8a;
+  --nio-accent: #0b57d0;
+
+  /* Typography: serif body + sans headings (Nature/Science-ish) */
+  --nio-font-body: Georgia, Cambria, "Times New Roman", Times, serif;
+  --nio-font-head: "Helvetica Neue", Helvetica, Arial, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", "Liberation Sans", sans-serif;
+
+  --nio-radius: 10px;
 }
 
-.nio-footer__inner{
-  /* IMPORTANT: wide but not too wide, like NIOLab */
+/* -------------------------
+   1) Global typography + color
+   ------------------------- */
+html { scroll-behavior: smooth; }
+
+body{
+  background: var(--nio-bg);
+  color: var(--nio-ink);
+  font-family: var(--nio-font-body);
+  font-size: 17px;                 /* readable, journal-ish */
+  line-height: 1.65;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  font-kerning: normal;
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-family: var(--nio-font-head);
+  color: var(--nio-ink);
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+}
+
+h1{ font-size: clamp(2.25rem, 4vw, 3.75rem); }
+h2{ font-size: clamp(1.6rem, 2.4vw, 2.2rem); }
+h3{ font-size: clamp(1.25rem, 1.9vw, 1.55rem); }
+
+p, li{ color: var(--nio-ink-2); }
+
+a{
+  color: var(--nio-link);
+  text-decoration: none;
+  text-underline-offset: 0.15em;
+}
+a:hover{
+  color: var(--nio-link-hover);
+  text-decoration: underline;
+}
+
+/* Slightly more “print” spacing in long text blocks */
+.prose :where(p, ul, ol){ margin-top: 0.9em; margin-bottom: 0.9em; }
+
+/* -------------------------
+   2) Fix “narrow text” (wide layout)
+   ------------------------- */
+/* Remove the default narrow “prose” column */
+.prose { max-width: none !important; }
+
+/* Common HugoBlox/Wowchemy wrappers that constrain width */
+.article-container,
+.universal-wrapper,
+.page-body .container,
+.page-body .hb-container,
+.page-container,
+.container,
+.hb-container{
+  max-width: 1200px !important;
+}
+
+/* Many blocks add extra max-width utilities; neutralize them */
+.max-w-prose,
+.max-w-screen-md,
+.max-w-screen-lg{
+  max-width: 1200px !important;
+}
+
+/* Comfortable side padding on wide screens */
+.container, .hb-container, .universal-wrapper, .article-container{
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+/* -------------------------
+   3) Header / Navbar (clean, journal-like)
+   ------------------------- */
+.navbar, .navbar-nav, .nav-link{
+  font-family: var(--nio-font-head);
+}
+
+.navbar{
+  background: rgba(255,255,255,0.92) !important;
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--nio-rule);
+}
+
+.navbar .nav-link{
+  color: var(--nio-ink) !important;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.navbar .nav-link:hover{
+  color: var(--nio-link) !important;
+}
+
+/* -------------------------
+   4) Hero (NIOLab-style big title, clean buttons)
+   ------------------------- */
+.wg-hero, .nio-hero{
+  border-bottom: 1px solid rgba(255,255,255,0.10);
+}
+
+.wg-hero h1, .nio-hero h1{
+  line-height: 1.03;
+  letter-spacing: -0.02em;
+  font-weight: 800;
+}
+
+.wg-hero p, .wg-hero .hero-lead, .nio-hero p{
+  font-family: var(--nio-font-head);
+  color: rgba(255,255,255,0.86);
+  font-size: clamp(1.02rem, 1.2vw, 1.2rem);
+  line-height: 1.55;
+}
+
+/* Primary/secondary actions */
+.btn, .btn-primary, .btn-outline-primary, .hero-btn{
+  font-family: var(--nio-font-head);
+  border-radius: 999px;
+  padding: 0.72rem 1.15rem;
+  font-weight: 650;
+  letter-spacing: 0.005em;
+}
+
+.btn-primary{
+  background: var(--nio-accent) !important;
+  border-color: var(--nio-accent) !important;
+}
+
+.btn-primary:hover{
+  filter: brightness(0.92);
+}
+
+.btn-outline-primary{
+  border-color: rgba(255,255,255,0.6) !important;
+  color: #fff !important;
+}
+
+.btn-outline-primary:hover{
+  background: rgba(255,255,255,0.12) !important;
+}
+
+/* -------------------------
+   5) Section styling (subtle rules, minimal cards)
+   ------------------------- */
+section, .home-section{
+  background: var(--nio-bg);
+}
+
+.home-section .section-heading h1,
+.home-section .section-heading h2{
+  font-family: var(--nio-font-head);
+}
+
+.home-section .section-heading p{
+  font-family: var(--nio-font-body);
+  color: var(--nio-ink-3);
+}
+
+/* Card-like blocks: less rounded, softer border */
+.card, .hb-card, .wg-card, .shadow{
+  border-radius: var(--nio-radius) !important;
+  border: 1px solid var(--nio-rule) !important;
+  box-shadow: none !important;
+}
+
+/* Light separators similar to journal rules */
+hr, .hr, .divider{
+  border-color: var(--nio-rule) !important;
+  opacity: 1 !important;
+}
+
+/* -------------------------
+   6) Footer (NIOLab-inspired)
+   ------------------------- */
+/* If you add a footer partial, give the wrapper: <footer id="site-footer" class="nio-footer"> ... */
+#site-footer.nio-footer{
+  margin-top: 4rem;
+  background: var(--nio-surface);
+  border-top: 1px solid var(--nio-rule);
+}
+
+#site-footer .footer-inner{
   max-width: 1200px;
   margin: 0 auto;
-  padding: 40px 20px 24px;
-}
-
-.nio-footer__grid{
+  padding: 2.5rem 1.25rem 1.5rem;
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr;
-  gap: 28px;
-  align-items: start;
+  grid-template-columns: 1.2fr 2fr;
+  gap: 2rem;
 }
 
-.nio-footer__brand{
+#site-footer .footer-brand{
+  font-family: var(--nio-font-head);
+}
+
+#site-footer .footer-brand .lab-name{
   font-weight: 800;
-  font-size: 20px;
-  letter-spacing: .2px;
+  font-size: 1.05rem;
+  color: var(--nio-ink);
+  letter-spacing: 0.01em;
 }
 
-.nio-footer__desc{
-  margin: 10px 0 14px;
-  color: rgba(0,0,0,.65);
+#site-footer .footer-brand .lab-tagline{
+  margin-top: 0.5rem;
+  color: var(--nio-ink-3);
+  font-family: var(--nio-font-body);
   line-height: 1.6;
+  font-size: 0.98rem;
 }
 
-.nio-footer__title{
-  font-weight: 700;
-  margin-bottom: 10px;
+#site-footer .footer-cols{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
 }
 
-.nio-footer__list{
+#site-footer .footer-col-title{
+  font-family: var(--nio-font-head);
+  font-size: 0.92rem;
+  font-weight: 750;
+  color: var(--nio-ink);
+  margin-bottom: 0.65rem;
+}
+
+#site-footer a{
+  color: var(--nio-ink-2);
+  text-decoration: none;
+}
+#site-footer a:hover{
+  color: var(--nio-link);
+  text-decoration: underline;
+}
+
+#site-footer ul{
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.nio-footer__list li{
-  margin: 8px 0;
-  color: rgba(0,0,0,.65);
+#site-footer li{
+  margin: 0.35rem 0;
+  color: var(--nio-ink-2);
+  font-family: var(--nio-font-head);
+  font-size: 0.95rem;
 }
 
-.nio-footer a{
-  color: rgba(0,0,0,.80);
-  text-decoration: none;
-}
-
-.nio-footer a:hover{
-  text-decoration: underline;
-}
-
-.nio-footer__social{
+#site-footer .footer-bottom{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 1.25rem 1.6rem;
+  border-top: 1px solid var(--nio-rule);
+  color: var(--nio-ink-3);
+  font-size: 0.9rem;
   display: flex;
+  gap: 1rem;
   flex-wrap: wrap;
-  gap: 10px;
-}
-
-.nio-footer__social a{
-  font-size: 14px;
-  padding: 6px 10px;
-  border: 1px solid rgba(0,0,0,.10);
-  border-radius: 999px;
-}
-
-.nio-footer__bottom{
-  margin-top: 26px;
-  padding-top: 18px;
-  border-top: 1px solid rgba(0,0,0,.08);
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
   align-items: center;
-  color: rgba(0,0,0,.60);
-  font-size: 14px;
+  justify-content: space-between;
+  font-family: var(--nio-font-head);
 }
 
-.nio-footer__sep{ opacity: .5; }
+#site-footer .footer-bottom .small-links a{
+  margin-left: 0.8rem;
+  color: var(--nio-ink-3);
+}
 
 @media (max-width: 900px){
-  .nio-footer__grid{ grid-template-columns: 1fr; }
+  #site-footer .footer-inner{
+    grid-template-columns: 1fr;
+  }
+  #site-footer .footer-cols{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 520px){
+  #site-footer .footer-cols{
+    grid-template-columns: 1fr;
+  }
+}
+
+/* -------------------------
+   7) Homepage content sizing controls (optional)
+   ------------------------- */
+/* Use this on the homepage root by adding `css_class: "nio-home"` in _index.md (design.css_class) */
+.nio-home .home-section{
+  padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
+}
+.nio-home .home-section p{
+  font-size: 1.05rem;
+}
+.nio-home .home-section .section-heading{
+  margin-bottom: 1.2rem;
 }
