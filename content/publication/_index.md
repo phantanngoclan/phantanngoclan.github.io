@@ -13,12 +13,6 @@ sections:
     content:
       title: Publications
       text: "Selected and full publications from OMNI-Lab."
-      # primary_action:
-      #   text: Google Scholar
-      #   url: https://scholar.google.com/...
-      # secondary_action:
-      #   text: ORCID
-      #   url: https://orcid.org/...
     design:
       background:
         color: "#0b1220"
@@ -31,32 +25,21 @@ sections:
   - block: collection
     id: pubs
     content:
-      title: ""
-      text: ""
+      # Render from content/publication/
       collection: publications
       count: 1000
       sort_by: date
       sort_ascending: false
 
-      filter_default: 0
+      # Built-in UI controls (safe across recent Hugo Blox versions)
       filter_show_count: true
       filter_show_search: true
       filter_show_sort: true
       filter_show_year: true
       filter_show_type: true
-      group_by: year
 
-      filters:
-        - name: All
-          tag: "*"
-        - name: OMIECs
-          tag: OMIEC
-        - name: n-Type
-          tag: n-type
-        - name: Device
-          tag: OECT
-        - name: Simulation
-          tag: simulation
+      # NOTE: Do NOT add `filters:` here unless you match the exact schema
+      # expected by your theme version. A wrong schema causes build failure.
 
     design:
       view: citation
@@ -66,11 +49,10 @@ sections:
 
   - block: markdown
     content:
-      title: ""
       text: |
         <div class="pubs-note">
         **Tip:** Add publications by creating files under `content/publication/` (one per paper)  
-        or import from BibTeX (recommended) and let the page render automatically.
+        or import from BibTeX and let this page render automatically.
         </div>
     design:
       spacing:
