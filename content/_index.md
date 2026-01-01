@@ -41,9 +41,9 @@ sections:
     content:
       title: ""
       text: |
-        **We design and study organic electronic & functional soft materials** spanning OMIECs, conjugated polymers, mixed ionic–electronic transport, and molecular engineering.
+        **I design and study organic electronic & functional soft materials** for advanced applications spanning organic electrochemical transistors, organic photodetectors, solar-to-hydrogen conversion, and so on.
     
-        Our lab combines **molecular design**, **simulation**, and **device-oriented characterization** to understand structure–property–function relationships.
+        My interests combine **molecular design**, **simulation**, and **device-oriented characterization** to understand structure–property–function relationships.
 
   # ===== FOCUS AREAS =====
   - block: features
@@ -68,8 +68,8 @@ sections:
   # ===== CTA =====
   - block: cta-card
     content:
-      title: "Join or collaborate with us"
-      text: "We welcome motivated students and collaborators."
+      title: "Join or collaborate with me"
+      text: "Always welcome motivated collaborators."
       button:
         text: "Contact"
         url: "/contact/"
