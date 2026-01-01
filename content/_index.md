@@ -1,6 +1,5 @@
 ---
 title: "Home"
-date: 2026-01-01
 type: landing
 
 design:
@@ -10,22 +9,11 @@ sections:
   # ===== HERO =====
   - block: hero
     content:
-      title: |
-        <div class="hero-title-wrap">
-          <div class="hero-acronym">
-            <span class="omni">
-              <span class="blink b1">O</span>
-              <span class="blink b2">M</span>
-              <span class="blink b3">N</span>
-              <span class="blink b4">I</span>
-            </span>
-          </div>
-          <div class="hero-fullname">
-            Organics Materials for Next Innovations
-          </div>
-        </div>
+      title: "OMNI"
+      subtitle: "Organics Materials for Next Innovations"
       text: |
-        We design, simulate, and characterize organic (opto)electronic materials—linking molecular design to device performance.
+        We design, simulate, and understand organic (opto)electronic materials,
+        connecting **molecular structure** to **device performance**.
       primary_action:
         text: "Research"
         url: "/research/"
@@ -33,75 +21,52 @@ sections:
       secondary_action:
         text: "Publications"
         url: "/publication/"
-      announcement:
-        text: "Open positions: PhD / MS / Interns"
-        link:
-          text: "See details"
-          url: "/join/"
     design:
-      css_class: "dark home-hero-wide"
+      css_class: "home-hero-wide dark"
       background:
         color: "black"
-        image:
-          filename: "lab-hero.jpg"
-          filters:
-            brightness: 0.35
-          size: cover
-          position: center
-          parallax: false
 
-  # ===== QUICK INTRO =====
+  # ===== ABOUT =====
   - block: markdown
     content:
       title: "About"
       text: |
-        **OMNI** is focused on organic semiconductors and mixed ionic–electronic conductors (OMIECs),
-        spanning **molecular design → simulations → thin films/devices**.
+        **OMNI Lab** focuses on organic semiconductors and mixed ionic–electronic
+        conductors (OMIECs), spanning:
 
-        - **Computational design:** DFT/MD/ML-enabled screening and mechanistic understanding  
-        - **Materials:** conjugated polymers, n-type acceptors, macrocycles  
-        - **Applications:** OECTs, photovoltaics, sensors, energy storage
-
-        👉 If you’re interested in collaborating, please reach out via the **Contact** page.
+        - Molecular & side-chain design  
+        - Multiscale simulations (DFT → MD)  
+        - Thin films, morphology, and devices  
+        - OECTs, photovoltaics, and energy materials
     design:
       css_class: "home-wide"
 
   # ===== FOCUS AREAS =====
   - block: features
     content:
-      title: "Focus areas"
-      text: ""
+      title: "Research focus"
       items:
         - name: "Molecular design"
           icon: sparkles
-          description: "Backbone/side-chain engineering for stability, transport, and ion uptake."
-        - name: "Multiscale simulation"
+          description: "Rational backbone and side-chain engineering."
+        - name: "Simulation"
           icon: cpu-chip
-          description: "DFT → force fields → MD films/solutions to connect structure and function."
-        - name: "OMIECs & devices"
+          description: "DFT, force-field development, and MD simulations."
+        - name: "OMIECs"
           icon: bolt
-          description: "From morphology and swelling to electronic performance in OECT-relevant conditions."
-        - name: "Structure–property"
-          icon: chart-bar
-          description: "Quantify how packing, planarity, and disorder impact transport and doping."
-        - name: "Thin-film morphology"
+          description: "Structure–property relations under electrochemical doping."
+        - name: "Thin films"
           icon: squares-2x2
-          description: "Annealing, solvent effects, aggregation pathways, and phase behavior."
-        - name: "Open science"
-          icon: code-bracket
-          description: "Reusable workflows, scripts, and reproducible simulation pipelines."
+          description: "Morphology, aggregation, and processing effects."
     design:
-      css_class: "bg-gray-50 dark:bg-gray-950 home-wide"
+      css_class: "home-wide"
 
   # ===== CTA =====
   - block: cta-card
     content:
-      title: "Want to work with us?"
-      text: "We welcome collaborations and motivated students."
+      title: "Join or collaborate with us"
+      text: "We welcome motivated students and collaborators."
       button:
-        text: "Join / Contact"
+        text: "Contact"
         url: "/contact/"
-    design:
-      card:
-        css_class: "bg-primary-300"
 ---
