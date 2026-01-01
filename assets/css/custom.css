@@ -1,1 +1,11 @@
+/* Make home sections wider (NIOLab-ish) */
+.section-wide .container,
+.hero-wide .container {
+  max-width: 1180px;
+}
+
+/* Slightly wider text measure */
+.section-wide p {
+  max-width: 78ch;
+}
 
