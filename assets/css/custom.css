@@ -1,33 +1,90 @@
-/* =========================
-   NIO-style wide layout
-   Put this file at: assets/css/custom.css
-   ========================= */
-
-/* 1) Remove the default “prose” narrow text column */
-.prose { 
-  max-width: none !important;
+/* ---------------------------
+   NIOLab-style Footer
+---------------------------- */
+.nio-footer{
+  margin-top: 64px;
+  border-top: 1px solid rgba(0,0,0,.08);
+  background: #fff;
 }
 
-/* 2) Widen the global container used by many HugoBlox blocks */
-.container, .hb-container, .page-container {
-  max-width: 1200px !important;
+.nio-footer__inner{
+  /* IMPORTANT: wide but not too wide, like NIOLab */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px 24px;
 }
 
-/* 3) Make landing-page sections use the wider container */
-.nio-wide .container,
-.nio-wide .hb-container {
-  max-width: 1200px !important;
+.nio-footer__grid{
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 28px;
+  align-items: start;
 }
 
-/* 4) Hero: keep it wide but with comfortable side padding */
-.nio-hero .container,
-.nio-hero .hb-container {
-  max-width: 1200px !important;
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
+.nio-footer__brand{
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: .2px;
 }
 
-/* 5) Optional: slightly tighter line-height for large hero title */
-.nio-hero h1 {
-  line-height: 1.05;
+.nio-footer__desc{
+  margin: 10px 0 14px;
+  color: rgba(0,0,0,.65);
+  line-height: 1.6;
+}
+
+.nio-footer__title{
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.nio-footer__list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nio-footer__list li{
+  margin: 8px 0;
+  color: rgba(0,0,0,.65);
+}
+
+.nio-footer a{
+  color: rgba(0,0,0,.80);
+  text-decoration: none;
+}
+
+.nio-footer a:hover{
+  text-decoration: underline;
+}
+
+.nio-footer__social{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.nio-footer__social a{
+  font-size: 14px;
+  padding: 6px 10px;
+  border: 1px solid rgba(0,0,0,.10);
+  border-radius: 999px;
+}
+
+.nio-footer__bottom{
+  margin-top: 26px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(0,0,0,.08);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  color: rgba(0,0,0,.60);
+  font-size: 14px;
+}
+
+.nio-footer__sep{ opacity: .5; }
+
+@media (max-width: 900px){
+  .nio-footer__grid{ grid-template-columns: 1fr; }
 }
