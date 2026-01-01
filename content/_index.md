@@ -9,7 +9,7 @@ sections:
   # ===== HERO =====
   - block: hero
     content:
-      title: Organic Materials for Next Innovations
+      title: 'Organic Materials for Next Innovations'
       text: Exploring novel materials towards connecting **molecular structure** and **device performance** of advanced disciplinary applications
       primary_action:
         text: "Research"
@@ -20,9 +20,18 @@ sections:
         url: "/publication/"
         icon: document-text
     design:
-      css_class: "home-hero-wide dark"
+      css_class: "dark"
+      # add `min-h-screen` if you want full screen hero
+      # css_style: "min-height: 80vh;"
       background:
         color: "black"
+        image:
+          filename: "lab-hero.jpg"
+          filters:
+            brightness: 0.45
+          size: cover
+          position: center
+          parallax: false
 
   # ===== ABOUT =====
   - block: markdown
