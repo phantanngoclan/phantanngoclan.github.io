@@ -12,10 +12,10 @@ sections:
   - block: hero
     content:
       title: Publications
-      text: "Selected and full publications from OMNI-Lab."
+      text: "Selected and full publications from OMNI-Guy."
     design:
       background:
-        color: "#0b1220"
+        color: indigo
         gradient_start: "#0b1220"
         gradient_end: "#111827"
         text_color_light: true
