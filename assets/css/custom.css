@@ -1,0 +1,27 @@
+/* ===== FIX NARROW LAYOUT ===== */
+
+/* Make homepage sections wider */
+.home-wide .container,
+.home-hero-wide .container {
+  max-width: 1200px !important;
+}
+
+/* Improve readability */
+.home-wide p,
+.home-wide ul {
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* Hero title styling (NIOLab-like) */
+.home-hero-wide h1 {
+  font-size: clamp(3rem, 6vw, 5rem);
+  letter-spacing: 0.08em;
+  font-weight: 800;
+}
+
+.home-hero-wide .subtitle {
+  font-size: 1.4rem;
+  font-weight: 500;
+  opacity: 0.9;
+}
