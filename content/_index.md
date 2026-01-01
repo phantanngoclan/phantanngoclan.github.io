@@ -11,7 +11,7 @@ sections:
  - block: hero
     content:
       title: 'Organics Materials for Next Innovations'
-      text: "Exploring novel materials towards advanced disciplinary applications"
+      text: 'Exploring novel materials towards advanced disciplinary applications'
       primary_action:
         text: "Research"
         url: "/research/"
