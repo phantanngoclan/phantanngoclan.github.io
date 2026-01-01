@@ -15,6 +15,7 @@ sections:
       text: "Selected publications from OMNI‑Guy."
     design:
       background:
+        color: "#0d3b66"
         gradient_start: "#0b1220"
         gradient_end: "#111827"
         text_color_light: true
@@ -24,7 +25,7 @@ sections:
   - block: markdown
     content:
       text: |
-        ## At VinUniversity
+        ## At UniversityX
 
         <ol class="pub-card-list">
           <li class="pub-card">
