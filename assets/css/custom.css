@@ -1,1 +1,29 @@
+/* -------------------------
+   2) Fix “narrow text” (wide layout)
+   ------------------------- */
+/* Remove the default narrow “prose” column */
+.prose { max-width: none !important; }
 
+/* Common HugoBlox/Wowchemy wrappers that constrain width */
+.article-container,
+.universal-wrapper,
+.page-body .container,
+.page-body .hb-container,
+.page-container,
+.container,
+.hb-container{
+  max-width: 1200px !important;
+}
+
+/* Neutralize common max-width utilities */
+.max-w-prose,
+.max-w-screen-md,
+.max-w-screen-lg{
+  max-width: 1200px !important;
+}
+
+/* Comfortable side padding */
+.container, .hb-container, .universal-wrapper, .article-container{
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
