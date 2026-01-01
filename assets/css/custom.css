@@ -1,27 +1,30 @@
 /* =========================================================
-   custom.css — Nature / Science journal vibe (Hugo Blox)
+   custom.css — NIOLab-like typography + wide layout + clean footer (Hugo Blox)
    Put this file at: assets/css/custom.css
    ========================================================= */
+
+/* Load NIOLab-style font (safe fallback to system sans) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
 /* -------------------------
    0) Design tokens
    ------------------------- */
 :root{
   --nio-bg: #ffffff;
-  --nio-surface: #fbfbfc;      /* subtle off-white */
-  --nio-ink: #111827;          /* near-black */
-  --nio-ink-2: #374151;        /* muted text */
-  --nio-ink-3: #6b7280;        /* secondary text */
-  --nio-rule: #e5e7eb;         /* hairline */
-  --nio-link: #0b57d0;         /* journal-like blue */
-  --nio-link-hover: #063a8a;
-  --nio-accent: #0b57d0;
+  --nio-surface: #f8fafc;      /* very light gray */
+  --nio-ink: #0f172a;          /* slate-900 */
+  --nio-ink-2: #334155;        /* slate-700 */
+  --nio-ink-3: #64748b;        /* slate-500 */
+  --nio-rule: #e2e8f0;         /* slate-200 */
+  --nio-link: #2563eb;         /* blue-600 */
+  --nio-link-hover: #1d4ed8;   /* blue-700 */
+  --nio-accent: #2563eb;
 
-  /* Typography: serif body + sans headings (Nature/Science-ish) */
-  --nio-font-body: Georgia, Cambria, "Times New Roman", Times, serif;
-  --nio-font-head: "Helvetica Neue", Helvetica, Arial, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", "Liberation Sans", sans-serif;
+  /* NIOLab vibe: modern sans everywhere */
+  --nio-font: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+              Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
 
-  --nio-radius: 10px;
+  --nio-radius: 12px;
 }
 
 /* -------------------------
@@ -32,39 +35,39 @@ html { scroll-behavior: smooth; }
 body{
   background: var(--nio-bg);
   color: var(--nio-ink);
-  font-family: var(--nio-font-body);
-  font-size: 17px;                 /* readable, journal-ish */
-  line-height: 1.65;
+  font-family: var(--nio-font);
+  font-size: 16.5px;
+  line-height: 1.7;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   font-kerning: normal;
 }
 
 h1,h2,h3,h4,h5,h6{
-  font-family: var(--nio-font-head);
+  font-family: var(--nio-font);
   color: var(--nio-ink);
-  letter-spacing: -0.015em;
-  line-height: 1.15;
+  letter-spacing: -0.02em;
+  line-height: 1.12;
 }
 
-h1{ font-size: clamp(2.25rem, 4vw, 3.75rem); }
-h2{ font-size: clamp(1.6rem, 2.4vw, 2.2rem); }
-h3{ font-size: clamp(1.25rem, 1.9vw, 1.55rem); }
+h1{ font-size: clamp(2.15rem, 4.2vw, 3.65rem); font-weight: 800; }
+h2{ font-size: clamp(1.55rem, 2.6vw, 2.15rem); font-weight: 800; }
+h3{ font-size: clamp(1.2rem, 2.0vw, 1.5rem); font-weight: 750; }
 
 p, li{ color: var(--nio-ink-2); }
 
 a{
   color: var(--nio-link);
   text-decoration: none;
-  text-underline-offset: 0.15em;
+  text-underline-offset: 0.16em;
 }
 a:hover{
   color: var(--nio-link-hover);
   text-decoration: underline;
 }
 
-/* Slightly more “print” spacing in long text blocks */
-.prose :where(p, ul, ol){ margin-top: 0.9em; margin-bottom: 0.9em; }
+/* Make long-form content feel airy (similar to NIOLab spacing) */
+.prose :where(p, ul, ol){ margin-top: 0.95em; margin-bottom: 0.95em; }
 
 /* -------------------------
    2) Fix “narrow text” (wide layout)
@@ -83,35 +86,35 @@ a:hover{
   max-width: 1200px !important;
 }
 
-/* Many blocks add extra max-width utilities; neutralize them */
+/* Neutralize common max-width utilities */
 .max-w-prose,
 .max-w-screen-md,
 .max-w-screen-lg{
   max-width: 1200px !important;
 }
 
-/* Comfortable side padding on wide screens */
+/* Comfortable side padding */
 .container, .hb-container, .universal-wrapper, .article-container{
   padding-left: 1.25rem;
   padding-right: 1.25rem;
 }
 
 /* -------------------------
-   3) Header / Navbar (clean, journal-like)
+   3) Navbar (minimal, crisp)
    ------------------------- */
 .navbar, .navbar-nav, .nav-link{
-  font-family: var(--nio-font-head);
+  font-family: var(--nio-font);
 }
 
 .navbar{
   background: rgba(255,255,255,0.92) !important;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--nio-rule);
 }
 
 .navbar .nav-link{
   color: var(--nio-ink) !important;
-  font-weight: 600;
+  font-weight: 650;
   letter-spacing: 0.01em;
 }
 
@@ -120,31 +123,28 @@ a:hover{
 }
 
 /* -------------------------
-   4) Hero (NIOLab-style big title, clean buttons)
+   4) Hero (big headline + clean buttons)
    ------------------------- */
-.wg-hero, .nio-hero{
-  border-bottom: 1px solid rgba(255,255,255,0.10);
+.wg-hero h1{
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  font-weight: 900;
 }
 
-.wg-hero h1, .nio-hero h1{
-  line-height: 1.03;
-  letter-spacing: -0.02em;
-  font-weight: 800;
-}
-
-.wg-hero p, .wg-hero .hero-lead, .nio-hero p{
-  font-family: var(--nio-font-head);
-  color: rgba(255,255,255,0.86);
-  font-size: clamp(1.02rem, 1.2vw, 1.2rem);
+/* Keep hero lead readable on image */
+.wg-hero p, .wg-hero .hero-lead{
+  font-family: var(--nio-font);
+  color: rgba(255,255,255,0.88);
+  font-size: clamp(1.0rem, 1.25vw, 1.18rem);
   line-height: 1.55;
 }
 
-/* Primary/secondary actions */
+/* Buttons: NIOLab-ish pill buttons */
 .btn, .btn-primary, .btn-outline-primary, .hero-btn{
-  font-family: var(--nio-font-head);
+  font-family: var(--nio-font);
   border-radius: 999px;
-  padding: 0.72rem 1.15rem;
-  font-weight: 650;
+  padding: 0.75rem 1.2rem;
+  font-weight: 700;
   letter-spacing: 0.005em;
 }
 
@@ -152,45 +152,45 @@ a:hover{
   background: var(--nio-accent) !important;
   border-color: var(--nio-accent) !important;
 }
+.btn-primary:hover{ filter: brightness(0.92); }
 
-.btn-primary:hover{
-  filter: brightness(0.92);
-}
-
+/* Outline button used on hero overlays */
 .btn-outline-primary{
-  border-color: rgba(255,255,255,0.6) !important;
+  border-color: rgba(255,255,255,0.65) !important;
   color: #fff !important;
 }
-
 .btn-outline-primary:hover{
   background: rgba(255,255,255,0.12) !important;
 }
 
 /* -------------------------
-   5) Section styling (subtle rules, minimal cards)
+   5) Section styling (DON'T kill hero background image)
    ------------------------- */
+/* Use background-color only so image backgrounds (hero) stay intact */
 section, .home-section{
-  background: var(--nio-bg);
+  background-color: var(--nio-bg);
+}
+.home-section.wg-hero{
+  background-color: transparent; /* allow hero's background-image */
 }
 
+/* Section headings */
 .home-section .section-heading h1,
 .home-section .section-heading h2{
-  font-family: var(--nio-font-head);
+  font-family: var(--nio-font);
 }
-
 .home-section .section-heading p{
-  font-family: var(--nio-font-body);
   color: var(--nio-ink-3);
 }
 
-/* Card-like blocks: less rounded, softer border */
+/* Cards: subtle border, no heavy shadow */
 .card, .hb-card, .wg-card, .shadow{
   border-radius: var(--nio-radius) !important;
   border: 1px solid var(--nio-rule) !important;
   box-shadow: none !important;
 }
 
-/* Light separators similar to journal rules */
+/* Subtle separators */
 hr, .hr, .divider{
   border-color: var(--nio-rule) !important;
   opacity: 1 !important;
@@ -199,7 +199,9 @@ hr, .hr, .divider{
 /* -------------------------
    6) Footer (NIOLab-inspired)
    ------------------------- */
-/* If you add a footer partial, give the wrapper: <footer id="site-footer" class="nio-footer"> ... */
+/* Add this HTML wrapper via a footer partial:
+   <footer id="site-footer" class="nio-footer"> ... </footer>
+*/
 #site-footer.nio-footer{
   margin-top: 4rem;
   background: var(--nio-surface);
@@ -216,20 +218,19 @@ hr, .hr, .divider{
 }
 
 #site-footer .footer-brand{
-  font-family: var(--nio-font-head);
+  font-family: var(--nio-font);
 }
 
 #site-footer .footer-brand .lab-name{
-  font-weight: 800;
+  font-weight: 850;
   font-size: 1.05rem;
   color: var(--nio-ink);
   letter-spacing: 0.01em;
 }
 
 #site-footer .footer-brand .lab-tagline{
-  margin-top: 0.5rem;
+  margin-top: 0.55rem;
   color: var(--nio-ink-3);
-  font-family: var(--nio-font-body);
   line-height: 1.6;
   font-size: 0.98rem;
 }
@@ -241,9 +242,8 @@ hr, .hr, .divider{
 }
 
 #site-footer .footer-col-title{
-  font-family: var(--nio-font-head);
   font-size: 0.92rem;
-  font-weight: 750;
+  font-weight: 800;
   color: var(--nio-ink);
   margin-bottom: 0.65rem;
 }
@@ -266,8 +266,8 @@ hr, .hr, .divider{
 #site-footer li{
   margin: 0.35rem 0;
   color: var(--nio-ink-2);
-  font-family: var(--nio-font-head);
   font-size: 0.95rem;
+  font-weight: 600;
 }
 
 #site-footer .footer-bottom{
@@ -282,7 +282,7 @@ hr, .hr, .divider{
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  font-family: var(--nio-font-head);
+  font-family: var(--nio-font);
 }
 
 #site-footer .footer-bottom .small-links a{
@@ -290,31 +290,28 @@ hr, .hr, .divider{
   color: var(--nio-ink-3);
 }
 
-@media (max-width: 900px){
-  #site-footer .footer-inner{
-    grid-template-columns: 1fr;
-  }
-  #site-footer .footer-cols{
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-@media (max-width: 520px){
-  #site-footer .footer-cols{
-    grid-template-columns: 1fr;
-  }
-}
-
 /* -------------------------
-   7) Homepage content sizing controls (optional)
+   7) Homepage spacing controls (optional)
    ------------------------- */
-/* Use this on the homepage root by adding `css_class: "nio-home"` in _index.md (design.css_class) */
+/* Add to your homepage _index.md:
+   design:
+     css_class: "nio-home"
+*/
 .nio-home .home-section{
-  padding-top: 4.5rem;
-  padding-bottom: 4.5rem;
+  padding-top: 4.2rem;
+  padding-bottom: 4.2rem;
 }
 .nio-home .home-section p{
   font-size: 1.05rem;
 }
 .nio-home .home-section .section-heading{
   margin-bottom: 1.2rem;
+}
+
+@media (max-width: 900px){
+  #site-footer .footer-inner{ grid-template-columns: 1fr; }
+  #site-footer .footer-cols{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 520px){
+  #site-footer .footer-cols{ grid-template-columns: 1fr; }
 }
