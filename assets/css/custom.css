@@ -153,3 +153,87 @@
   background: var(--nio-surface);
   color: var(--nio-ink-2);
 }
+
+
+/* ============================
+   Publications cards (fix)
+   - Fixes "1. 1." and restores blue accent bar
+   ============================ */
+
+/* Fallback: even if page class isn't applied, don't show default list numbers */
+.pub-card-list{ list-style: none !important; padding: 0 !important; margin: 0 !important; }
+
+/* Preferred: page-scoped (matches Publications page class) */
+.nio-pubs-manual h2{
+  position: relative;
+  padding-left: 14px;
+  margin-top: 2.2rem;
+  margin-bottom: 1.2rem;
+  font-weight: 850;
+  letter-spacing: -0.02em;
+}
+.nio-pubs-manual h2::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.12em;
+  bottom: 0.12em;
+  width: 4px;
+  border-radius: 999px;
+  background: var(--nio-accent, #2563eb);
+}
+
+.nio-pubs-manual .pub-card-list{
+  display: grid;
+  gap: 1.35rem;
+}
+
+.nio-pubs-manual .pub-card{
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 14px;
+  align-items: flex-start;
+  background: #f3f7ff;
+  border: 1px solid rgba(37,99,235,0.12);
+  border-left: 5px solid var(--nio-accent, #2563eb);
+  border-radius: 14px;
+  padding: 1.25rem 1.35rem;
+}
+
+.nio-pubs-manual .pub-num{
+  font-weight: 850;
+  font-family: var(--nio-font-head, var(--nio-font, ui-sans-serif));
+  color: var(--nio-ink, #0f172a);
+  font-size: 1.05rem;
+  line-height: 1.2;
+  margin-top: 0.05rem;
+}
+
+.nio-pubs-manual .pub-text{
+  color: var(--nio-ink-2, #334155);
+  font-size: 1.02rem;
+  line-height: 1.75;
+}
+
+.nio-pubs-manual .pub-links{
+  margin-top: 0.75rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.nio-pubs-manual .pub-links a{
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  border: 1px solid rgba(37,99,235,0.25);
+  background: rgba(255,255,255,0.8);
+  padding: 0.32rem 0.7rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--nio-link-hover, #1d4ed8);
+  text-decoration: none;
+}
+.nio-pubs-manual .pub-links a:hover{
+  border-color: rgba(37,99,235,0.45);
+  background: #ffffff;
+}
