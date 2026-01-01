@@ -37,13 +37,13 @@ sections:
   - block: markdown
     content:
       title: "Mission"
-      text: **OMNI Lab** focuses on organic semiconductors and mixed ionic–electronic
+      text: '**OMNI Lab** focuses on organic semiconductors and mixed ionic–electronic
         conductors (OMIECs), spanning:
 
         - Molecular & side-chain design  
         - Multiscale simulations (DFT → MD)  
         - Thin films, morphology, and devices  
-        - OECTs, photovoltaics, and energy materials
+        - OECTs, photovoltaics, and energy materials'
     design:
       css_class: "home-wide"
 
