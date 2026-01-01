@@ -9,11 +9,8 @@ sections:
   # ===== HERO =====
   - block: hero
     content:
-      title: "OMNI"
-      subtitle: "Organics Materials for Next Innovations"
-      text: |
-        We design, simulate, and understand organic (opto)electronic materials,
-        connecting **molecular structure** to **device performance**.
+      title: "Organic Materials for Next Innovations"
+      text: "Exploring novel materials towards connecting **molecular structure** and **device performance** of advanced disciplinary applications
       primary_action:
         text: "Research"
         url: "/research/"
@@ -21,6 +18,7 @@ sections:
       secondary_action:
         text: "Publications"
         url: "/publication/"
+        icon: document-text
     design:
       css_class: "home-hero-wide dark"
       background:
@@ -29,7 +27,7 @@ sections:
   # ===== ABOUT =====
   - block: markdown
     content:
-      title: "About"
+      title: "Mission"
       text: |
         **OMNI Lab** focuses on organic semiconductors and mixed ionic–electronic
         conductors (OMIECs), spanning:
@@ -44,7 +42,7 @@ sections:
   # ===== FOCUS AREAS =====
   - block: features
     content:
-      title: "Research focus"
+      title: "Research Areas"
       items:
         - name: "Molecular design"
           icon: sparkles
