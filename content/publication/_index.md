@@ -15,7 +15,7 @@ sections:
       text: "Selected and full publications from OMNI-Guy."
     design:
       background:
-        color: indigo
+        color: "#0d3b66"
         gradient_start: "#0b1220"
         gradient_end: "#111827"
         text_color_light: true
