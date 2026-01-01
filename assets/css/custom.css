@@ -1,11 +1,33 @@
-/* Make home sections wider (NIOLab-ish) */
-.section-wide .container,
-.hero-wide .container {
-  max-width: 1180px;
+/* =========================
+   NIO-style wide layout
+   Put this file at: assets/css/custom.css
+   ========================= */
+
+/* 1) Remove the default “prose” narrow text column */
+.prose { 
+  max-width: none !important;
 }
 
-/* Slightly wider text measure */
-.section-wide p {
-  max-width: 78ch;
+/* 2) Widen the global container used by many HugoBlox blocks */
+.container, .hb-container, .page-container {
+  max-width: 1200px !important;
 }
 
+/* 3) Make landing-page sections use the wider container */
+.nio-wide .container,
+.nio-wide .hb-container {
+  max-width: 1200px !important;
+}
+
+/* 4) Hero: keep it wide but with comfortable side padding */
+.nio-hero .container,
+.nio-hero .hb-container {
+  max-width: 1200px !important;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+/* 5) Optional: slightly tighter line-height for large hero title */
+.nio-hero h1 {
+  line-height: 1.05;
+}
