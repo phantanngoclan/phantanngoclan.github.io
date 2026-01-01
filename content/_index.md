@@ -9,8 +9,8 @@ sections:
   # ===== HERO =====
   - block: hero
     content:
-      title: "Organic Materials for Next Innovations"
-      text: "Exploring novel materials towards connecting **molecular structure** and **device performance** of advanced disciplinary applications
+      title: Organic Materials for Next Innovations
+      text: Exploring novel materials towards connecting **molecular structure** and **device performance** of advanced disciplinary applications
       primary_action:
         text: "Research"
         url: "/research/"
